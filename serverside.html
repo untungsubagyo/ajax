@@ -1,0 +1,55 @@
+<html>
+<head>
+<script type='text/javascript' src='jquery-1.12.4.js'></script>
+<script type='text/javascript' src='jquery.dataTables.min.js'></script>
+<link href="jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" class="init">
+	
+$(document).ready(function() {
+	$('#example').DataTable( {
+		"processing": true,
+		"serverSide": true,
+		"ajax": {
+			"url": "scripts/jsonp.php",
+			"dataType": "jsonp"
+		}
+	} );
+} );
+
+	</script>
+</head>
+<body>
+<table id="example" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+	<script type='text/javascript'>
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        "ajax": "data/arrays_ss.txt"
+    } );
+} );
+	</script>
+</body>
+</html>
+
